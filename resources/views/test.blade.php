@@ -1,0 +1,5 @@
+DB_HOST=db4free.net
+DB_PORT=3306
+DB_DATABASE=kaneslor
+DB_USERNAME=kaneslor
+DB_PASSWORD=4liberty@2021
