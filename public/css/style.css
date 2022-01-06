@@ -42,7 +42,17 @@ section {
   color: #232323;
   letter-spacing: 0.5px;
 }
-
+.real-blue-button a {
+  display: inline-block;
+  background-color: #322776;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 16px;
+  text-decoration: none;
+  border: 2px solid #322776;
+  transition: all 0.5s;
+}
 
 .blue-button a {
   display: inline-block;
@@ -59,6 +69,11 @@ section {
 .blue-button a:hover {
   background-color: transparent;
   color: #F60E0F;
+}
+
+.real-blue-button a:hover {
+  background-color: transparent;
+  color: #322776;
 }
 
 
@@ -404,6 +419,9 @@ section.banner {
 }
 
 .banner .banner-caption .blue-button {
+  margin-top: 30px;
+}
+.banner .banner-caption .real-blue-button {
   margin-top: 30px;
 }
 

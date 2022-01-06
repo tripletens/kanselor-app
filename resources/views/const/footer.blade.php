@@ -44,7 +44,7 @@
                         <div class="footer-heading">
                             <h4>Contact Information</h4>
                         </div>
-                        <p><i class="fa fa-map-marker"></i> Kanselor University Campus, Lakeview Estate, Phase two 101015, Lagos</p>
+                        <p><i class="fa fa-map-marker"></i> <a target="_blank" href="https://maps.app.goo.gl/eKSNrtxf2uKStD696"> Kanselor University Campus, Lakeview Estate, Phase two 101015, Lagos </a></p>
                         <ul>
                             <li><span>Phone:</span><a href="tel:+2348023622171">+234 802 362 2171</a></li>
                             <li><span>Email:</span><a href="mailto:admin@kaneslor.com">admin@kaneslor.com</a></li>
