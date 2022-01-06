@@ -22,10 +22,10 @@
                     <div class="col-md-7">
                         <div class="left-content">
                             <br>
-                            <h4>About us</h4>
-                            <p>Aenean hendrerit metus leo, quis viverra purus condimentum nec. Pellentesque a sem semper, lobortis mauris non, varius urna. Quisque sodales purus eu tellus fringilla.<br><br>Mauris sit amet quam congue, pulvinar urna et, congue diam. Suspendisse eu lorem massa. Integer sit amet posuere tellus, id efficitur leo. In hac habitasse platea dictumst. Vel sequi odit similique repudiandae ipsum iste, quidem tenetur id impedit, eaque et, aliquam quod.</p>
-
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure cupiditate id unde quis ut maxime, accusantium aperiam consectetur saepe delectus ducimus accusamus, ad doloremque ea. Quam, suscipit quidem perspiciatis asperiores, libero cum saepe hic pariatur eos deleniti illum minima minus.</p>
+                            <h4>WELCOME TO KANSELOR VACANCY</h4>
+                            <p> where Jobs are created for unemployed graduates and Businesses are made more profitable for Nigerian business owner
+                            </p>
+                            <p>At KANSELOR VACANCY, we work with Business owners to create jobs for unemployed graduates and we prepare unemployed Nigerian graduates to make businesses more profitable when business owners employ them</p>
                         </div>
                     </div>
                     <div class="col-md-5">
@@ -37,21 +37,10 @@
 
         <section id="video-container">
             <div class="video-overlay"></div>
-            <div class="video-content">
+            <div class="video-content d-flex justify-content-center flex-row">
                 <div class="inner">
-                      <div class="section-heading">
-                          <span>Lorem ipsum dolor.</span>
-                          <h2>Vivamus nec vehicula felis</h2>
-                      </div>
-                      <!-- Modal button -->
-
-                      <div class="container">
-                        <div class="row">
-                            <div class="col-lg-10 col-lg-offset-1">
-                                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi blanditiis, esse deserunt assumenda! Tempora nulla natus illum soluta quasi, nisi, in quaerat cumque corrupti ipsum impedit necessitatibus expedita minus harum, fuga id aperiam autem architecto odio. Perferendis eius possimus ex itaque tenetur saepe id quis dicta voluptas, corrupti sapiente hic!</p>
-                            </div>
-                        </div>
-                      </div>
+                    <iframe width="60%" height="60%" src="https://www.youtube.com/embed/G8W5hAdSMkc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    
                 </div>
             </div>
         </section>

@@ -3,7 +3,7 @@
 
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('landing-page')}}">
-    <img src="{{asset('images/Kanselor_transparentwhite.png')}}" style="height:100px;width:auto;padding:20px;" alt="Kaneslor Logo">
+    <img src="{{asset('images/kiyix_logo_white.png')}}" style="height:100px;width:auto;padding:20px;" alt="Kaneslor Logo">
 </a>
 
 <!-- Divider -->
