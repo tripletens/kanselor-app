@@ -4,7 +4,7 @@
                 <div class="col-md-5">
                     <div class="about-veno">
                         <div class="logo">
-							<img src="{{asset('images/logo.png')}}" style="height:100px;width:300px;" alt="Kaneslor Logo">
+							<img src="{{asset('images/Kiyix_logo.png')}}" style="height:100px;width:200px;" alt="Kaneslor Logo">
                         </div>
                         <p>We work with Business owners to create jobs for unemployed graduates and we prepare unemployed Nigerian graduates to make businesses more profitable when business owners employ them</p>
                         <ul class="social-icons">
