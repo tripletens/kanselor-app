@@ -16,16 +16,10 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="real-blue-button" style="background:#fff;">
+                            <div class="blue-button" style="background:#fff;">
                                 <a href="{{route('register')}}" style="height:70px;font-size:16px; font-weight:bolder;text-align:center;">Register as an Applicant</a>
                             </div>
                         </div>
-                        <!-- <div class="blue-button">
-                                <a href="{{route('contact-page')}}">Register as an Employer</a>
-                            </div> -->
-                        <!-- <div class="blue-button">
-                                <a href="{{route('contact-page')}}">Register as an Applicant </a>
-                            </div> -->
                     </div>
                 </div>
             </div>
