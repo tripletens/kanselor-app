@@ -23,7 +23,7 @@
                         <div class="item popular-item">
                             <div class="thumb">
                                 <div class="thumb-img">
-                                    <img src="img/popular_item_1.jpg" alt="">
+                                    <img src="{{asset('img/kanselor_testimonial.jpg')}}" alt="">
                                 </div>
                                 <div class="text-content">
                                     <h4>M.D Geneith Pharma limited</h4>
@@ -37,7 +37,7 @@
                         <div class="item popular-item">
                             <div class="thumb">
                                 <div class="thumb-img">
-                                    <img src="img/popular_item_2.jpg" alt="">
+                                    <img src="{{asset('img/kanselor_testimonial.jpg')}}" alt="">
                                 </div>
                                 <div class="text-content">
                                     <h4>MD TRICARE LIMITED</h4>
@@ -51,7 +51,7 @@
                         <div class="item popular-item">
                             <div class="thumb">
                                 <div class="thumb-img">
-                                    <img src="img/popular_item_3.jpg" alt="">
+                                    <img src="{{asset('img/kanselor_testimonial.jpg')}}" alt="">
                                 </div>
                                 <div class="text-content">
                                     <h4>MD Crosslink Group</h4>
@@ -65,7 +65,7 @@
                         <div class="item popular-item">
                             <div class="thumb">
                                 <div class="thumb-img">
-                                    <img src="img/popular_item_4.jpg" alt="">
+                                    <img src="{{asset('img/kanselor_testimonial.jpg')}}" alt="">
                                 </div>
                                 <div class="text-content">
                                     <h4>PHARM JOSEPH ABU</h4>

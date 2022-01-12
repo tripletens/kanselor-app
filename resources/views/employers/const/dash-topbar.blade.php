@@ -174,6 +174,7 @@
             
             
             <img class="img-profile rounded-circle"
+            
                 src="{{asset('storage/images/')}}/{{auth('employer')->user()->image}}">
         </a>
         <!-- Dropdown - User Information -->

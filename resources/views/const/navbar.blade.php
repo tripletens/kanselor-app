@@ -28,11 +28,32 @@
 
                                 <li><a href="{{route('contact-page')}}">Contact Us</a></li>
 
-                                <li>
-                                    <a href="{{route('login')}}">
-                                        <button class="btn btn-lg btn-outline-danger" style="height:50px; width:100px; font-size:medium;background:#F60E0F;color:#fff;"> Login</button>
-                                    </a>
-                                </li>
+                                @if (Auth('admin')->check())
+                                    <li>
+                                        <a href="{{route('admin.home')}}">
+                                            <button class="btn btn-lg btn-outline-danger" style="height:50px; width:auto; font-size:medium;background:#F60E0F;color:#fff;"> Go to Dashboard</button>
+                                        </a>
+                                    </li>
+                                @elseif(Auth('employer')->check())
+                                    <li>
+                                        <a href="{{route('employer.home')}}">
+                                            <button class="btn btn-lg btn-outline-danger" style="height:50px; width:auto; font-size:medium;background:#F60E0F;color:#fff;"> Go to Dashboard</button>
+                                        </a>
+                                    </li>
+                                @elseif(Auth('user')->check())
+                                    <li>
+                                        <a href="{{route('home')}}">
+                                            <button class="btn btn-lg btn-outline-danger" style="height:50px; width:auto; font-size:medium;background:#F60E0F;color:#fff;"> Go to Dashboard</button>
+                                        </a>
+                                    </li>
+                                @else
+                                    <li>
+                                        <a href="{{route('login')}}">
+                                            <button class="btn btn-lg btn-outline-danger" style="height:50px; width:100px; font-size:medium;background:#F60E0F;color:#fff;"> Login</button>
+                                        </a>
+                                    </li>
+                                @endif
+                                
                             </ul>
                         </nav><!-- / #primary-nav -->
                     </div>

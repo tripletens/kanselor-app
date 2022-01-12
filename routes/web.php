@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 // 
 Route::prefix('dashboard')->group(function () {
     // Route::prefix('admin')->middleware(['is_admin', 'auth'])->group(function () {
-    //     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
     //     Route::get('/user/profile', function () {
     //         // Uses first & second middleware...
@@ -170,7 +170,7 @@ Route::prefix('/employer')->name('employer.')->namespace('App\Http\Controllers\E
 
     });
 
-    Route::get('/dashboard','HomeController@index')->name('home')->middleware('guard.verified:employer,employer.verification.notice');
+    Route::get('/dashboard','HomeController@index')->name('home')->middleware('auth:employer');
 
     //Put all of your admin routes here...
 

@@ -22,10 +22,10 @@
                     <div class="col-md-7">
                         <div class="left-content">
                             <br>
-                            <h4>WELCOME TO KANSELOR VACANCY</h4>
+                            <h4>WELCOME TO KIYIX VACANCY</h4>
                             <p> where Jobs are created for unemployed graduates and Businesses are made more profitable for Nigerian business owner
                             </p>
-                            <p>At KANSELOR VACANCY, we work with Business owners to create jobs for unemployed graduates and we prepare unemployed Nigerian graduates to make businesses more profitable when business owners employ them</p>
+                            <p>At KIYIX VACANCY, we work with Business owners to create jobs for unemployed graduates and we prepare unemployed Nigerian graduates to make businesses more profitable when business owners employ them</p>
                         </div>
                     </div>
                     <div class="col-md-5">

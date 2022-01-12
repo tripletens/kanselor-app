@@ -83,9 +83,9 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn bg-success text-white" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    <a class="btn bg-success text-white" href="{{ route('employer.logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">Logout</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    <form id="logout-form" action="{{ route('employer.logout') }}" method="POST" class="d-none">
                         @csrf
                     </form>
                 </div>
