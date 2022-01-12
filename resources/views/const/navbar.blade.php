@@ -40,7 +40,7 @@
                                             <button class="btn btn-lg btn-outline-danger" style="height:50px; width:auto; font-size:medium;background:#F60E0F;color:#fff;"> Go to Dashboard</button>
                                         </a>
                                     </li>
-                                @elseif(Auth('user')->check())
+                                @elseif(Auth('web')->check())
                                     <li>
                                         <a href="{{route('home')}}">
                                             <button class="btn btn-lg btn-outline-danger" style="height:50px; width:auto; font-size:medium;background:#F60E0F;color:#fff;"> Go to Dashboard</button>
