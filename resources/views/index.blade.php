@@ -15,11 +15,11 @@
                                 <a href="{{route('employer.register')}}" style="height:70px;font-size:16px; font-weight:bolder;text-align:center;">Register as an Employer</a>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <!-- <div class="col-md-6">
                             <div class="blue-button">
                                 <a href="{{route('register')}}" style="height:70px;font-size:16px; font-weight:bolder;text-align:center;">Register as an Employer</a>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- <div class="col-md-6">
                             <div class="blue-button">
                                 <a href="{{route('register')}}" style="height:70px;font-size:16px; font-weight:bolder;text-align:center;">Register as an Applicant</a>
