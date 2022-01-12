@@ -16,7 +16,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="real-blue-button">
+                            <div class="blue-button" style="background:#322776;">
                                 <a href="{{route('register')}}" style="height:70px;font-size:16px; font-weight:bolder;text-align:center;">Register as an Applicant</a>
                             </div>
                         </div>
