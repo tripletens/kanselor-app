@@ -53,9 +53,7 @@ section {
   border: 2px solid #322776;
   transition: all 0.5s;
 }
-.real-blue-button a:hover{
-  color:#fff;
-}
+
 .blue-button a {
   display: inline-block;
   background-color: #F60E0F;
