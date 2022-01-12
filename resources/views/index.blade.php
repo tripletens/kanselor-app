@@ -11,7 +11,7 @@
                     <h2 style="font-weight:bolder;">PICK YOUR DREAM JOB AND KIYIX FIND IT FOR YOU </h2>
                     <div class="row" style="width:50%;">
                         <div class="col-md-6">
-                            <div class="real-blue-button">
+                            <div class="blue-button">
                                 <a href="{{route('employer.register')}}" style="height:70px;font-size:16px; font-weight:bolder;text-align:center;">Register as an Employer</a>
                             </div>
                         </div>
