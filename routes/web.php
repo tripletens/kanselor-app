@@ -145,6 +145,11 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
         Route::get('/all-applications','TrainingsController@fetch_all_training_applications')->name('fetch_all_training_applications');
     });
 
+    Route::prefix('profile')->group(function () {
+        Route::get('/view','ProfileController@fetch_user_details')->name('view-profile');
+        Route::post('/update','ProfileController@update_profile')->name('update-profile');
+        Route::post('/change-password','ProfileController@change_password')->name('change_password');
+    });
 });
 
 Route::prefix('/employer')->name('employer.')->namespace('App\Http\Controllers\Employer')->group(function(){

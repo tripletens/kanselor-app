@@ -190,7 +190,7 @@
         <div class="bg-white py-2 collapse-inner rounded">
             <!-- <h6 class="collapse-header">Custom Components:</h6> -->
             <!-- <a class="collapse-item" href="#">Make Payment </a> -->
-            <a class="collapse-item" href="{{route('view-profile')}}">View Profile</a>
+            <a class="collapse-item" href="{{route('admin.view-profile')}}">View Profile</a>
         </div>
     </div>
 </li>
