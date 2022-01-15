@@ -142,6 +142,7 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
         Route::post('/edit','TrainingsController@edit_training')->name('edit_training');
         Route::post('/activate','TrainingsController@activate_training')->name('activate_training');
         Route::post('/deactivate','TrainingsController@deactivate_training')->name('deactivate_training');
+        Route::get('/all-applications','TrainingsController@fetch_all_training_applications')->name('fetch_all_training_applications');
     });
 
 });
@@ -203,6 +204,7 @@ Route::get('/trainings', [App\Http\Controllers\LandingController::class,'trainin
 Route::get('/trainings/{slug}', [App\Http\Controllers\LandingController::class,'trainings_one'])->name('training-one-page');
 
 Route::post('/apply-training', [App\Http\Controllers\LandingController::class,'apply_training'])->name('apply-training');
+
 
 
 

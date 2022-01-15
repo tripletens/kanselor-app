@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\ApplyTrainings;
 use App\Models\Trainings;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -176,6 +178,22 @@ class TrainingsController extends Controller
                 return back();
             }
         }
+    }
+
+    public function fetch_all_training_applications(){
+        $all_training_applications = DB::table('apply_trainings')->join('trainings','apply_trainings.training_id', '=', 'trainings.id')
+        ->select('apply_trainings.*','trainings.title','trainings.description','trainings.status as training_status')
+        ->orderBy('apply_trainings.id','desc')->get();
+        
+        if(!$all_training_applications){
+            toastr()->error('Sorry we could not fetch all the Applica');
+            return back();
+        }
+        
+        $data = [ 
+            'training_applications' => $all_training_applications
+        ];
+        return view('admin.trainings_apply.view')->with($data);
     }
 
 }

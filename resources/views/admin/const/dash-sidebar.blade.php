@@ -135,7 +135,7 @@
     <div id="training_application" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div class="bg-white py-2 collapse-inner rounded">
             <!-- <h6 class="collapse-header">Custom Components:</h6> -->
-            <a class="collapse-item" href="{{route('admin.all-interviews')}}">View all Applications</a>
+            <a class="collapse-item" href="{{route('admin.fetch_all_training_applications')}}">View all Applications</a>
             <!-- <a class="collapse-item" href="#">View Job applications</a> -->
         </div>
     </div>

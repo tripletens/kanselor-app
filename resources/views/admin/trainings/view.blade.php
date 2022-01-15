@@ -63,7 +63,7 @@
                                 <th>No</th>
                                 <th>Title</th>
                                 <th>Description</th>
-                                <th>Image</th>
+                                <!-- <th>Image</th> -->
                                 <th>Status</th>
                                 <th>Date Created</th>
                                 <th></th>
@@ -76,7 +76,7 @@
                                 <td>{{$key+1}}</td>
                                 <td> {{ ucwords($training->title)}}</td>
                                 <td> {{$training->description ? $training->description : N/A }}</td>
-                                <td>  @if($training->image) {{$training->image}}  @else N/A @endif </td>
+                                <!-- <td>  @if($training->image) {{$training->image}}  @else N/A @endif </td> -->
                                 <td> @if($training->status == 1)
                                     <span class="badge badge-success">Active</span>
                                     @else
