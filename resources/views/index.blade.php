@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="col-6">
                                     <ul class="justify-content-center">
-                                        <li style="font-size: larger;"> <span style="font-weight:bolder;">STEP FIVE</span>  <p>- LGet list of PRE-QUALIFIED candidates </p></li>
+                                        <li style="font-size: larger;"> <span style="font-weight:bolder;">STEP FIVE</span>  <p>- Get list of PRE-QUALIFIED candidates </p></li>
                                         <li style="font-size: larger;"> <span style="font-weight:bolder;">STEP SIX</span>  <p> - Pick a date to meet the Candidates</p></li>
                                         <li style="font-size: larger;"> <span style="font-weight:bolder;">STEP SEVEN</span> <p>- Interview the candidates </p></li>
                                         <li style="font-size: larger;"> <span style="font-weight:bolder;">STEP EIGHT</span> <p> - Close the opening </p> </li>
