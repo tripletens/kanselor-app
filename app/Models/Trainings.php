@@ -9,5 +9,5 @@ class Trainings extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'image', 'status', 'created_at', 'updated_at' ];
+    protected $fillable = ['title', 'description', 'image','slug', 'status', 'created_at', 'updated_at' ];
 }
