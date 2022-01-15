@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Jobs;
+use App\Models\Trainings;
 
 class LandingController extends Controller
 {
@@ -58,5 +59,16 @@ class LandingController extends Controller
     {
         //
         return view('terms');
+    }
+
+    public function trainings()
+    {
+        // fetch all the trainings 
+        
+        $trainings = Trainings::orderby('id','desc')->paginate(10);
+        $data = [
+            'trainings' => $trainings
+        ];
+        return view('trainings')->with($data);
     }
 }

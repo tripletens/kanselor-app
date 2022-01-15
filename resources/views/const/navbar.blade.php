@@ -24,7 +24,7 @@
                                     </ul>
                                 </li>
 
-                                <li><a href="#">Trainings</a></li>
+                                <li><a href="{{route('training-page')}}">Trainings</a></li>
 
                                 <li><a href="{{route('contact-page')}}">Contact Us</a></li>
 

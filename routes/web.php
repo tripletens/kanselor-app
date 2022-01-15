@@ -135,12 +135,18 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
         Route::post('/deactivate','EmployerController@deactivate_employer')->name('deactivate_employer');
     });
 
-    
+    Route::prefix('/trainings')->middleware('guard.verified:admin,admin.verification.notice')->group(function () {
+        Route::get('/view','TrainingsController@fetch_all_trainings')->name('fetch_all_trainings');
+        Route::get('/view/{id}','TrainingsController@fetch_one_training')->name('fetch_one_training');
+        Route::post('/create','TrainingsController@create_training')->name('create_training');
+        Route::post('/edit','TrainingsController@edit_training')->name('edit_training');
+        Route::post('/activate','TrainingsController@activate_training')->name('activate_training');
+        Route::post('/deactivate','TrainingsController@deactivate_training')->name('deactivate_training');
+    });
 
 });
 
 Route::prefix('/employer')->name('employer.')->namespace('App\Http\Controllers\Employer')->group(function(){
-    
     /**
      * Admin Auth Route(s)
      */
@@ -172,7 +178,7 @@ Route::prefix('/employer')->name('employer.')->namespace('App\Http\Controllers\E
 
     Route::get('/dashboard','HomeController@index')->name('home')->middleware('auth:employer');
 
-    //Put all of your admin routes here...
+    // Put all of your admin routes here...
 
 });
 
@@ -191,6 +197,8 @@ Route::get('/blog', [App\Http\Controllers\LandingController::class,'blog'])->nam
 Route::get('/testimonials', [App\Http\Controllers\LandingController::class,'testimonials'])->name('testimonials-page');
 
 Route::get('/terms', [App\Http\Controllers\LandingController::class,'terms'])->name('terms-page');
+
+Route::get('/trainings', [App\Http\Controllers\LandingController::class,'trainings'])->name('training-page');
 
 Auth::routes(['verify' => true]);
 

@@ -86,6 +86,4 @@ class EmployerController extends Controller
         toastr()->success('Employer activated successfully');
         return back();
     }
-
-    
 }
