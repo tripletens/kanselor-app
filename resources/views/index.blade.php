@@ -8,16 +8,16 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="banner-caption">
                     <div class="line-dec"></div>
-                    <h2 style="font-weight:bolder;">PICK YOUR DREAM JOB AND KIYIX FIND IT FOR YOU </h2>
+                    <h2 style="font-weight:bolder;">PICK YOUR DREAM JOB AND KIYIX FINDS IT FOR YOU </h2>
                     <div class="row" style="width:50%;">
                         <div class="col-md-6">
                             <div class="blue-button">
-                                <a href="{{route('employer.register')}}" style="height:70px;font-size:16px; font-weight:bolder;text-align:center;">Register as an Employer</a>
+                                <a href="{{route('employer.register')}}" style="height:auto;font-size:16px; font-weight:bolder;text-align:center;">Register as an Employer</a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="blue-button">
-                                <a href="{{route('register')}}" style="height:70px;font-size:16px; font-weight:bolder;text-align:center;">Register as an Applicant</a>
+                                <a href="{{route('register')}}" style="height:auto;font-size:16px; font-weight:bolder;text-align:center;">Register as an Applicant</a>
                             </div>
                         </div>
                         <!-- <div class="col-md-6">
@@ -72,7 +72,7 @@
                                 </div>
                                 <div class="col-6">
                                     <ul class="justify-content-center">
-                                        <li style="font-size: larger;"> <span style="font-weight:bolder;">STEP FIVE</span>  <p>- Listen to audio of pre-interviewed candidates </p></li>
+                                        <li style="font-size: larger;"> <span style="font-weight:bolder;">STEP FIVE</span>  <p>- LGet list of PRE-QUALIFIED candidates </p></li>
                                         <li style="font-size: larger;"> <span style="font-weight:bolder;">STEP SIX</span>  <p> - Pick a date to meet the Candidates</p></li>
                                         <li style="font-size: larger;"> <span style="font-weight:bolder;">STEP SEVEN</span> <p>- Interview the candidates </p></li>
                                         <li style="font-size: larger;"> <span style="font-weight:bolder;">STEP EIGHT</span> <p> - Close the opening </p> </li>
