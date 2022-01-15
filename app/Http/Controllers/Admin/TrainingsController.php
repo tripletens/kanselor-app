@@ -39,6 +39,7 @@ class TrainingsController extends Controller
                     'title' => $title,
                     'description' => $description,
                     'image' => $new_filename,
+                    'slug' =>  Str::slug($title)
                 ]);
 
                 if(!$create_training){
@@ -163,6 +164,7 @@ class TrainingsController extends Controller
                     'title' => $title,
                     'description' => $description,
                     'image' => $new_filename,
+                    'slug' =>  Str::slug($title)
                 ]);
 
                 if(!$update_training){

@@ -200,6 +200,12 @@ Route::get('/terms', [App\Http\Controllers\LandingController::class,'terms'])->n
 
 Route::get('/trainings', [App\Http\Controllers\LandingController::class,'trainings'])->name('training-page');
 
+Route::get('/trainings/{slug}', [App\Http\Controllers\LandingController::class,'trainings_one'])->name('training-one-page');
+
+Route::post('/apply-training', [App\Http\Controllers\LandingController::class,'apply_training'])->name('apply-training');
+
+
+
 Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
