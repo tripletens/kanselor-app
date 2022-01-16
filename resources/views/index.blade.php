@@ -12,12 +12,12 @@
                     <div class="row" style="width:50%;">
                         <div class="col-md-6">
                             <div class="blue-button">
-                                <a href="{{route('employer.register')}}" style="height:auto;font-size:16px; font-weight:bolder;text-align:center;">Register as an Employer</a>
+                                <a href="{{route('employer.register')}}" style="height:auto;font-size:16px; font-weight:bolder;text-align:center;width:auto;">Register as an Employer</a>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="blue-button">
-                                <a href="{{route('register')}}" style="height:auto;font-size:16px; font-weight:bolder;text-align:center;">Register as an Applicant</a>
+                                <a href="{{route('register')}}" style="height:auto;font-size:16px; font-weight:bolder;text-align:center;width:auto;">Register as an Applicant</a>
                             </div>
                         </div>
                         <!-- <div class="col-md-6">

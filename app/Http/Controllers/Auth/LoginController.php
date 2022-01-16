@@ -55,6 +55,7 @@ class LoginController extends Controller
         return view('auth.login',[
             'title' => 'Login',
             'loginRoute' => 'login',
+            'registerRoute' => 'register',
             'forgotPasswordRoute' => 'password.request',
         ]);
     }

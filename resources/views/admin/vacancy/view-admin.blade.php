@@ -64,7 +64,6 @@
                                         </button>
                                     </div>
                                 </div>
-                                 <!-- Button trigger modal -->
                                 
 
                                 <!-- Modal -->
