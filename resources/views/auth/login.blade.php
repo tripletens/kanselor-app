@@ -15,7 +15,9 @@
                         <div class="col-lg-6">
                             <div class="p-5">
                                 <div class="text-center">
-                                    <h1 class="h4 text-gray-900 mb-4">{{$title}}</h1>
+                                    <h1 class="h4 text-gray-900 mb-2"><a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('landing-page')}}">
+                                            <img src="{{asset('images/kiyix_logo.png')}}" style="height:50px;width:auto;padding:0px;" alt="Kiyix Logo">
+                                        </a>{{$title}}</h1>
                                 </div>
 
                                 <nav>
@@ -55,14 +57,14 @@
                                             <!-- <a href="submit" class="btn btn-primary btn-user btn-block">
                                             Login
                                             </a> -->
-                                                <!-- <hr>
+                                            <!-- <hr>
                                             <a href="index.html" class="btn btn-google btn-user btn-block">
                                                 <i class="fab fa-google fa-fw"></i> Login with Google
                                             </a>
                                             <a href="index.html" class="btn btn-facebook btn-user btn-block">
                                                 <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
                                             </a> -->
-                                            <hr/>
+                                            <hr />
                                             @if (Route::has('password.request'))
                                             <div class="text-center">
                                                 <a class="small" href="{{ route($forgotPasswordRoute) }}">Forgot Password?</a>
@@ -70,9 +72,9 @@
                                             @endif
 
                                             @if(isset($registerRoute))
-                                                <div class="text-center">
-                                                    <a class="small" href="{{route('register')}}">Create an Account!</a>
-                                                </div>
+                                            <div class="text-center">
+                                                <a class="small" href="{{route('register')}}">Create an Account!</a>
+                                            </div>
                                             @endif
                                         </form>
                                     </div>
@@ -103,7 +105,7 @@
                                                 </div>
                                             </div>
                                             <input class="btn btn-success btn-user btn-block" type="submit" value="Login" />
-                                            <hr/>
+                                            <hr />
                                             <!-- @if (Route::has('password.request'))
                                             <div class="text-center">
                                                 <a class="small" href="{{ route('employer.password.request') }}">Forgot Password?</a>
@@ -111,11 +113,11 @@
                                             @endif -->
 
                                             @if(isset($registerRoute))
-                                                <div class="text-center">
-                                                    <a class="small" href="{{route('employer.register')}}">Create an Account!</a>
-                                                </div>
+                                            <div class="text-center">
+                                                <a class="small" href="{{route('employer.register')}}">Create an Account!</a>
+                                            </div>
                                             @endif
-                                            
+
                                         </form>
                                     </div>
                                 </div>

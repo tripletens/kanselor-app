@@ -104,7 +104,7 @@ class LoginController extends Controller
     {
         Auth::guard('employer')->logout();
         return redirect()
-            ->route('employer.login')
+            ->route('login')
             ->with('status','Employer has been logged out!');
     }
 
