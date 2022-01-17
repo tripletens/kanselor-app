@@ -3,11 +3,14 @@
 namespace App\Http\Controllers\Employer;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Employer;
 use App\Models\Vacancy;
 
 use Illuminate\Support\Facades\Validator;
+
+use DB;
 
 class VacancyController extends Controller
 {
@@ -16,8 +19,11 @@ class VacancyController extends Controller
         
         $employers = Employer::all();
 
+        $categories = Category::all();
+
         $data = [
-            'employers' => $employers
+            'employers' => $employers,
+            'categories' => $categories
         ];
 
         return view('employers.vacancy.create')->with($data);
@@ -33,7 +39,8 @@ class VacancyController extends Controller
             "qualification" => 'required',
             "from_age" => 'required',
             "to_age" => 'required',
-            "tribe" => 'required'
+            "tribe" => 'required',
+            'category_id' => 'required'
         ]);
     
         if ($validator->fails()) {
@@ -56,6 +63,8 @@ class VacancyController extends Controller
         $from_age = $request->input('from_age');
         $to_age = $request->input('to_age');
         $tribe = $request->input('tribe');
+        $category_id = $request->input('category_id');
+
 
         $code = "KAN-" . rand(8,999999);
 
@@ -71,7 +80,9 @@ class VacancyController extends Controller
             'uploader_id' => $uploader_id, 
             'employer_id' => $uploader_id, 
             'tribe' => $tribe,
-            'code' => $code
+            'code' => $code,
+            'category_id' => $category_id,
+            'status' => false
         ]);
 
         if(!$create_vacancy){
@@ -101,16 +112,23 @@ class VacancyController extends Controller
 
     public function view_vacancies(){
         $employer_id = Auth('employer')->user()->id;
-        
-        $my_vacancies = Vacancy::where('is_employer', '1')->where('employer_id', $employer_id)->orderby('id','desc')->paginate(10);
 
+        $categories = Category::all();
+        
+        // $my_vacancies = Vacancy::where('is_employer', '1')->where('employer_id', $employer_id)->orderby('id','desc')->paginate(10);
+
+        $my_vacancies = DB::table('vacancies')->join('employers','vacancies.employer_id', '=', 'employers.id')
+        ->join('categories','vacancies.category_id', '=', 'categories.id')
+        ->where('vacancies.is_employer', '1')->where('employer_id', $employer_id)->select('vacancies.*','employers.name','categories.name as category_name','categories.slug as category_slug')->orderby('id','desc')->paginate(10);
+        
         if(!$my_vacancies){
             toastr()->error('Sorry we could not fetch employer vacancies. Try again later');
             return back();
         }
 
         $data = [
-            'my_vacancies' => $my_vacancies
+            'my_vacancies' => $my_vacancies,
+            'categories' => $categories
         ];
 
         return view('employers.vacancy.view-vacancies')->with($data);
@@ -125,7 +143,8 @@ class VacancyController extends Controller
             "from_age" => 'required',
             "to_age" => 'required',
             "tribe" => 'required',
-            "vacancy_id" => 'required'
+            "vacancy_id" => 'required',
+            'category_id' => 'required'
         ]);
     
         if ($validator->fails()) {
@@ -143,6 +162,8 @@ class VacancyController extends Controller
 
         $vacancy_id = $request->input('vacancy_id');
 
+        $category_id = $request->input('category_id');
+        
         // echo $vacancy_id; exit();
 
         $fetch_vacancy = Vacancy::find($vacancy_id);
@@ -159,7 +180,8 @@ class VacancyController extends Controller
             'qualification' => $qualification,
             'from_age' => $from_age, 
             'to_age' => $to_age,
-            'tribe' => $tribe
+            'tribe' => $tribe,
+            'category_id' => $category_id
         ]);
 
         if(!$update_vacancy){

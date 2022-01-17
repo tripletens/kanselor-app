@@ -124,11 +124,28 @@
                                             @endforeach
                                         @endif
                                     </select>
-                                    
                                 </div>
+
                             </div>
 
                         </div>
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="category_id">Select Category <span class="text-danger"> *</span></label>
+                                    <select name="category_id" required class="form-control">
+                                        <option name="category_id[]" value="">-- Select an category --</option>
+                                        @if(count($categories) > 0 )
+                                            @foreach ($categories as $category)
+                                            <option name="category_id[]" value="{{$category->id}}"> {{ $category->name}}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
 
                         <div class="form-group">
                             <div class="d-flex flex-end flex-row">

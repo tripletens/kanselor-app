@@ -9,5 +9,5 @@ class Vacancy extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'description', 'experience', 'qualification', 'status', 'from_age', 'to_age', 'is_admin', 'is_employer', 'uploader_id', 'employer_id', 'tribe','code'];
+    protected $fillable = ['category_id','title', 'description', 'experience', 'qualification', 'status', 'from_age', 'to_age', 'is_admin', 'is_employer', 'uploader_id', 'employer_id', 'tribe','code','status'];
 }

@@ -16,13 +16,12 @@ class CreateVacanciesTable extends Migration
         Schema::create('vacancies', function (Blueprint $table) {
             // title,  age range, tribe, experience, qualification
             // status , description
-
             $table->id();
             $table->string('title')->nullable();
             $table->longText('description')->nullable();
             $table->integer('experience')->nullable();
             $table->string('qualification')->nullable();
-            $table->boolean('status')->default(true);
+            $table->boolean('status')->default(false);
             $table->integer('from_age')->nullable();
             $table->integer('to_age')->nullable();
             $table->integer('is_admin')->nullable();

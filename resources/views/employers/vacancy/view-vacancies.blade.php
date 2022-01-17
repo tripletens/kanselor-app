@@ -25,6 +25,12 @@
                             <td><span class="badge badge-info">{{ucwords($my_vacancy->code)}}</span></td>
                         </tr>
                         <tr>
+                            <th>Category Name: </th>
+                            <td>
+                                <span class="badge badge-info">{{ucwords($my_vacancy->category_name)}} </span>
+                            </td>
+                        </tr>
+                        <tr>
                             <th>Title: </th>
                             <td>{{ucwords($my_vacancy->title)}}</td>
                         </tr>
@@ -52,6 +58,16 @@
                                 @endif
                             </td>
                         </tr>
+
+                        <tr>
+                            <th>Status: </th>
+                            <td>@if ($my_vacancy->status == 1)
+                                <span class="badge badge-success"> Approved </span>
+                                @else
+                                <span class="badge badge-info"> Not Approved </span>
+                                @endif
+                            </td>
+                        </tr>
                         <tr>
                             <td colspan="2" aria-colspan="2">
                                 <div class="text-center">
@@ -76,7 +92,7 @@
                                             <div class="modal-body">
                                                 <form method="POST" action="{{route('employer.edit_vacancy')}}">
                                                     @csrf
-                                                    <input type="hidden" name="vacancy_id" value="{{$my_vacancy->id}}"/>
+                                                    <input type="hidden" name="vacancy_id" value="{{$my_vacancy->id}}" />
                                                     <div class="form-group">
                                                         <div class="row">
                                                             <div class="col-md-6">
@@ -155,8 +171,8 @@
                                                                 <label for="tribe">Tribe: <span class="text-danger"> *</span></label>
                                                                 <select name="tribe" class="form-control @error('tribe') is-invalid @enderror">
                                                                     <option name="tribe[]" value=""> -- Select a tribe -- </option>
-                                                                    <option name="tribe[]" value="igbo" > Igbo </option>
-                                                                    <option name="tribe[]" value="yoruba" > Yoruba </option>
+                                                                    <option name="tribe[]" value="igbo"> Igbo </option>
+                                                                    <option name="tribe[]" value="yoruba"> Yoruba </option>
                                                                     <option name="tribe[]" value="hausa"> Hausa </option>
                                                                     <option name="tribe[]" value="other"> Others </option>
                                                                     <option name="tribe[]" value="any"> Any Tribe </option>
@@ -167,17 +183,27 @@
                                                                 </span>
                                                                 @enderror
                                                             </div>
+                                                            <div class="col-md-6">
+                                                                <label for="category_id">Select Category <span class="text-danger">*</span></label>
+                                                                <select name="category_id" required class="form-control">
+                                                                    <option name="category_id[]" value="">-- Select a Category --</option>
+                                                                    @if(count($categories) > 0 )
+                                                                    @foreach ($categories as $category)
+                                                                    <option name="category_id[]" value="{{$category->id}}"> {{ $category->name}}</option>
+                                                                    @endforeach
+                                                                    @endif
+                                                                </select>
+                                                            </div>
                                                         </div>
-
                                                     </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                                 <div class="form-group">
-                                                        <div class="d-flex flex-end flex-row">
-                                                            <button type="submit" class="btn btn-block btn-danger pull-right">Save</button>
-                                                        </div>
+                                                    <div class="d-flex flex-end flex-row">
+                                                        <button type="submit" class="btn btn-block btn-danger pull-right">Save</button>
                                                     </div>
+                                                </div>
                                                 </form>
                                             </div>
                                         </div>

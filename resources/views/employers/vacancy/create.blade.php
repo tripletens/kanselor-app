@@ -111,6 +111,17 @@
                                     </span>
                                     @enderror
                                 </div>
+                                <div class="col-md-6">
+                                    <label for="category_id">Select Category <span class="text-danger"> *</span></label>
+                                    <select name="category_id" required class="form-control">
+                                        <option name="category_id[]" value="">-- Select a Category --</option>
+                                        @if(count($categories) > 0 )
+                                            @foreach ($categories as $category)
+                                            <option name="category_id[]" value="{{$category->id}}"> {{ $category->name}}</option>
+                                            @endforeach
+                                        @endif
+                                    </select>
+                                </div>
                             </div>
 
                         </div>

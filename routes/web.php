@@ -131,8 +131,13 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
 
         Route::get('/view-admin-vacancies','VacancyController@view_admin_vacancies')->name('view_admin_vacancies');
         
-        Route::post('/activate','EmployerController@activate_employer')->name('activate_employer');
-        Route::post('/deactivate','EmployerController@deactivate_employer')->name('deactivate_employer');
+        Route::get('/view-employer-vacancies','VacancyController@view_employer_vacancies')->name('view_employer_vacancies');
+
+        Route::post('/edit','VacancyController@edit_vacancy')->name('edit_vacancy');
+        Route::post('/delete','VacancyController@delete_vacancy')->name('delete_vacancy');
+
+        Route::post('/approve','VacancyController@approve_vacancy')->name('approve_vacancy');
+        Route::post('/reject','VacancyController@reject_vacancy')->name('reject_vacancy');
     });
 
     Route::prefix('/trainings')->middleware('guard.verified:admin,admin.verification.notice')->group(function () {

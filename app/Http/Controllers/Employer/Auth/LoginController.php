@@ -79,13 +79,17 @@ class LoginController extends Controller
             return $this->sendLockoutResponse($request);
         }
 
-        //attempt login.
-        if(Auth::guard('employer')->attempt($request->only('email','password'),$request->filled('remember'))){
+        //attempt login.$request->only('email','password'
+        if(Auth::guard('employer')->attempt(['email' => $request->email,'password'=> $request->password,'status'=>'1'],$request->filled('remember'))){
             //Authenticated, redirect to the intended route
             //if available else employer dashboard.
+            toastr()->success('Login Successful');
             return redirect()
                 ->intended(route('employer.home'))
                 ->with('status','You are Logged in as employer!');
+        }else{
+            toastr()->error('Account has been suspended or doesnt exist contact Admin');
+            return back();
         }
 
         //keep track of login attempts from the user.
