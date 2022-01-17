@@ -16,7 +16,7 @@
                             <div class="p-5">
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-2"><a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('landing-page')}}">
-                                            <img src="{{asset('images/kiyix_logo.png')}}" style="height:50px;width:auto;padding:0px;" alt="Kiyix Logo">
+                                            <img src="{{asset('images/Kiyix_logo.png')}}" style="height:50px;width:auto;padding:0px;" alt="Kiyix Logo">
                                         </a>{{$title}}</h1>
                                 </div>
 
