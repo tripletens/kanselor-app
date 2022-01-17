@@ -179,13 +179,22 @@ Route::prefix('/employer')->name('employer.')->namespace('App\Http\Controllers\E
         Route::get('email/verify','VerificationController@show')->name('verification.notice');
         Route::get('email/verify/{id}','VerificationController@verify')->name('verification.verify');
         Route::get('email/resend','VerificationController@resend')->name('verification.resend');
-
+        
     });
 
     Route::get('/dashboard','HomeController@index')->name('home')->middleware('auth:employer');
 
-    // Put all of your admin routes here...
+    // Put all of your employer routes here...
 
+    Route::prefix('/vacancies')->middleware('auth:employer')->group(function () {
+        Route::get('/create','VacancyController@create_job_vacancy_page')->name('create_job_vacancy_page');
+        Route::post('/submit-create','VacancyController@create_job_vacancy')->name('create_job_vacancy');
+
+        Route::get('/view-vacancies','VacancyController@view_vacancies')->name('view_vacancies');
+        
+        Route::post('/edit','VacancyController@edit_vacancy')->name('edit_vacancy');
+        Route::post('/delete','VacancyController@delete_vacancy')->name('delete_vacancy');
+    });
 });
 
 Route::get('/', [App\Http\Controllers\LandingController::class,'index'])->name('landing-page');

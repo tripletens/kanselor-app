@@ -1,4 +1,4 @@
-@extends('layouts.dashboard-admin')
+@extends('layouts.dashboard-employer')
 
 @section('content')
 <style type="text/css" rel="stylesheet">
@@ -19,11 +19,8 @@
             <div class="card ">
                 <h4 class="card-title p-4 mb-0 pb-0 text-center">Create Job Vacancy</h4>
                 <div class="card-body">
-                    <form method="POST" action="{{route('admin.create_job_vacancy')}}">
+                    <form method="POST" action="{{route('employer.create_job_vacancy')}}">
                         @csrf
-                        <!-- `title`, `descripition`, `experience`, 
-                    `qualification`, `status`, `from_age`, 
-                    `to_age`, `is_admin`, `is_employer`, `uploader_id`,`employer_id` -->
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-6">
@@ -37,7 +34,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="description"> Description: <span class="text-danger"> *</span></label>
-                                    <textarea class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" placeholder="Give us more details about the position"></textarea>
+                                    <textarea class="form-control @error('description') is-invalid @enderror"  name="description" value="{{ old('description') }}" placeholder="Give us more details about the position"></textarea>
                                     @error('description')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -113,18 +110,6 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="employer_id">Select Employer <span class="text-danger"> *</span></label>
-                                    <select name="employer_id" required class="form-control">
-                                        <option name="employer_id[]" value="">-- Select an Employer --</option>
-                                        @if(count($employers) > 0 )
-                                            @foreach ($employers as $employer)
-                                            <option name="employer_id[]" value="{{$employer->id}}"> {{ $employer->name}}</option>
-                                            @endforeach
-                                        @endif
-                                    </select>
-                                    
                                 </div>
                             </div>
 
