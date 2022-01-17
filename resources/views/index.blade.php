@@ -2,7 +2,7 @@
 
 @section('content')
 
-<section class="banner" id="top" style="background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{asset('images/kaneslor_hero_section.jpg')}}), bottom;">
+<section class="banner" id="top" style="background:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{asset('images/kaneslor_hero_section.jpg')}}); background-position:center;">
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
