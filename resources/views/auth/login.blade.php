@@ -23,7 +23,8 @@
                                 <nav>
                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                         <button class="nav-link active text-success" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Job Seeker</button>
-                                        <button class="nav-link text-success" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Employer</button>
+                                        <button class="nav-link text-success" id="nav-employer-tab" data-bs-toggle="tab" data-bs-target="#nav-employer" type="button" role="tab" aria-controls="nav-employer" aria-selected="false">Employer</button>
+                                        <button class="nav-link text-success" id="nav-admin-tab" data-bs-toggle="tab" data-bs-target="#nav-admin" type="button" role="tab" aria-controls="nav-admin" aria-selected="false">Admin</button>
                                     </div>
                                 </nav>
                                 <div class="tab-content mt-3" id="nav-tabContent">
@@ -78,7 +79,7 @@
                                             @endif
                                         </form>
                                     </div>
-                                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                    <div class="tab-pane fade" id="nav-employer" role="tabpanel" aria-labelledby="nav-employer-tab">
                                         <form class="user" method="POST" action="{{ route('employer.login') }}">
                                             @csrf
                                             <div class="form-group">
@@ -118,6 +119,36 @@
                                             </div>
                                             @endif
 
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-admin" role="tabpanel" aria-labelledby="nav-admin-tab">
+                                        <form class="user" method="POST" action="{{ route('admin.login') }}">
+                                            @csrf
+                                            <div class="form-group">
+                                                <input type="email" class="form-control  form-control-user @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                                                @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" id="exampleInputPassword" placeholder="Password">
+                                                @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="custom-control custom-checkbox small">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                                    <label class="custom-control-label" for="customCheck">Remember
+                                                        Me</label>
+                                                </div>
+                                            </div>
+                                            <input class="btn btn-success btn-user btn-block" type="submit" value="Login" />
+                                        
                                         </form>
                                     </div>
                                 </div>
