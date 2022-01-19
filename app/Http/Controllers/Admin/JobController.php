@@ -177,9 +177,6 @@ class JobController extends Controller
     }
 
     public function fetch_job_applicants_by_id($id){
-
-       
-    
         $check_job_applicant = User::find($id);
 
         if(!$check_job_applicant){

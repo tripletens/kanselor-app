@@ -41,7 +41,7 @@
                         <button class="btn btn-danger btn block" type="submit">Submit</button>
                                 </form>
                     @else
-                    <span class="text-center alert d-flex justify-content-center alert-info m-3"> Sorry No Tests available now. Try again later</span>
+                    <span class="text-center alert d-flex justify-content-center alert-info m-3"> Sorry No Tests available now. Check back later</span>
                     @endif
                 </div>
             </div>

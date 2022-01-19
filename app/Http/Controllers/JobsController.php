@@ -22,9 +22,52 @@ class JobsController extends Controller
     }
     public function apply_jobs_page(){
         $categories = Category::all();
-        $data = [
-            'category' => $categories
+
+        $states = [
+            "NG-AB" => "Abia",
+            "NG-AD" => "Adamawa",
+            "NG-AK" => "Akwa Ibom",
+            "NG-AN" => "Anambra",
+            "NG-BA" => "Bauchi",
+            "NG-BY" => "Bayelsa",
+            "NG-BE" => "Benue",
+            "NG-BO" => "Borno",
+            "NG-CR" => "Cross River",
+            "NG-DE" => "Delta",
+            "NG-EB" => "Ebonyi",
+            "NG-ED" => "Edo",
+            "NG-EK" => "Ekiti",
+            "NG-EN" => "Enugu",
+            "NG-FC" => "FCT - Abuja",
+            "NG-GO" => "Gombe",
+            "NG-IM" => "Imo",
+            "NG-JI" => "Jigawa",
+            "NG-KD" => "Kaduna",
+            "NG-KN" => "Kano",
+            "NG-KT" => "Katsina",
+            "NG-KE" => "Kebbi",
+            "NG-KO" => "Kogi",
+            "NG-KW" => "Kwara",
+            "NG-LA" => "Lagos",
+            "NG-NA" => "Nasarawa",
+            "NG-NI" => "Niger",
+            "NG-OG" => "Ogun",
+            "NG-ON" => "Ondo",
+            "NG-OS" => "Osun",
+            "NG-OY" => "Oyo",
+            "NG-PL" => "Plateau",
+            "NG-RI" => "Rivers",
+            "NG-SO" => "Sokoto",
+            "NG-TA" => "Taraba",
+            "NG-YO" => "Yobe",
+            "NG-ZA" => "Zamfara"
         ];
+
+        $data = [
+            'category' => $categories,
+            'states' => $states
+        ];
+
         return view('dashboard.jobs.apply')->with($data);
     }
 
@@ -48,8 +91,10 @@ class JobsController extends Controller
             "certification" => 'required',
             "qualified" => 'required',
             "referees" => 'required',
+            'language' => 'required',
+            'state' => 'required'
         ]);
-    
+        
         if ($validator->fails()) {
             toastr()->error('Validation Error Ocurred');
             return back()->withErrors($validator)->withInput();
@@ -74,6 +119,8 @@ class JobsController extends Controller
         $job_application->certification = $request->input('certification');
         $job_application->referees = $request->input('referees');
         $job_application->qualified = $request->input('qualified');
+        $job_application->state = $request->input('state');
+        $job_application->language = $request->input('language');
 
         $job_application->user_id = Auth('web')->user()->id;
         $job_application->code = "KAN_" . Str::random(8);
@@ -93,7 +140,7 @@ class JobsController extends Controller
         $user_id = Auth('web')->user()->id;
 
         $get_jobs = DB::table('applications')->where('applications.user_id',"$user_id")->join('categories', 'applications.category', '=', 'categories.id')
-        ->select('applications.*','categories.name as category_name')->get();
+        ->select('applications.*','categories.name as category_name')->orderby('applications.id','desc')->get();
 
         // echo dd($get_jobs); exit();
 

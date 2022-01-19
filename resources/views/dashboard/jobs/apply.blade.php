@@ -41,7 +41,7 @@
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
-                                @enderror    
+                                @enderror
                             </div>
                         </div>
                     </div>
@@ -167,9 +167,9 @@
                             <input type="text" multiple required class="form-control" name="social_media" placeholder="Social Media Handle i.e linkedin, facebook or twitter" aria-label="social_media" aria-describedby="basic-addon1">
                         </div>
                         @error('social_media')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                     <div class="form-group">
@@ -179,9 +179,21 @@
                             <input type="number" required class="form-control" min="0" name="salary" placeholder="Salary Expectation" aria-label="salary" aria-describedby="basic-addon1">
                         </div>
                         @error('salary')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
+                        <label for="language">Main Spoken Language: </label>
+                        <div class="input-group mb-3">
+                            <input type="text" required class="form-control" required name="language" placeholder="Language Spoken" aria-label="language" aria-describedby="basic-addon1">
+                        </div>
+                        @error('language')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
             </div>
@@ -192,6 +204,24 @@
                 <div class="form-group">
                     <label for="address"> Residential Address: </label>
                     <textarea class="form-control" required name="address" placeholder="Enter Residential Address"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="state">State of Origin:</label>
+                    <select type="search" class="form-control form-control-user @error('state') is-invalid @enderror" name="state" value="{{ old('state') }}" required autocomplete="state" autofocusid="exampleFirststate" placeholder="State of Residence">
+                        <option name="state[]" value="">-- Select a state of origin --</option>
+                        @if(count($states) > 0)
+                        @foreach($states as $key => $value)
+                        <option name="state[]" value="{{$value}}"> {{ $value }}</option>
+                        @endforeach
+                        @else
+                        <span class="alert alert-info"> Sorry states not available at the moment.</span>
+                        @endif
+                    </select>
+                    @error('state')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <label for="address"> Employment History (in reverse chronological order): </label>

@@ -14,7 +14,7 @@
     <div class="row">
             @if(count($interviews) > 0)
                 @foreach($interviews as $interview)
-                <div class="col-md-6 col-xs-12 col-lg-6">
+                <div class="col-md-6 col-xs-12 col-lg-6 mb-3">
                     <div class="card">
                         <div class="card-body">
                             <!-- `title`, `application_code`, `type`, `link`, `address`, `time`, `date`, `status`, -->
@@ -29,7 +29,7 @@
                                 </tr>
                                 <tr class="p-5">
                                     <th><p> Interview Type </p></th>
-                                    <td><p> @if($interview->type == "virtual") {{ucword($interview->type)}} @else 'In-Person' @endif</p></td>
+                                    <td><p> @if($interview->type == "virtual") {{ucwords($interview->type)}} @else In-Person @endif</p></td>
                                 </tr>
                                 <tr class="p-5">
                                     <th><p>Meeting Details</p></th>
@@ -63,6 +63,7 @@
                         </div>
                     </div>
                 </div>
+                <br/><br/>
                 @endforeach
             @else
             <div class="col-md-12 col-xs-12 col-lg-12">
