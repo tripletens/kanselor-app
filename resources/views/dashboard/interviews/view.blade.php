@@ -29,7 +29,7 @@
                                 </tr>
                                 <tr class="p-5">
                                     <th><p> Interview Type </p></th>
-                                    <td><p> @if($interview->type == "virtual") {{ucword($interview->type}} @else 'In-Person' @endif</p></td>
+                                    <td><p> @if($interview->type == "virtual") {{ucword($interview->type)}} @else 'In-Person' @endif</p></td>
                                 </tr>
                                 <tr class="p-5">
                                     <th><p>Meeting Details</p></th>

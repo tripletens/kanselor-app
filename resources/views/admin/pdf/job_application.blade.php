@@ -61,7 +61,7 @@
                     {{ucfirst($job_application[0]->code)}}
                 </td>
             </tr>
-            <tr style="">
+            <tr style="margin-top:100px;padding:100px;">
                 <th>
                   Full Name:
                 </th>
