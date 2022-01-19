@@ -1,13 +1,14 @@
+<!DOCTYPE html>
 <html>
 
 <head>
     <title>
         Kiyix Vacancy
     </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
 
-    <style type="text/css">
+    <style type="text/css" rel="stylesheet">
         body {
             background-color: #ffffff;
             color: #000000;
@@ -52,8 +53,8 @@
     </div>
         
     <h2 style="text-align:center;">JOB SEEKER APPLICATION FORM</h2>
-    <table class="table">
-            <tr style="width:1000px;">
+    <table class="table" style="">
+            <tr style="width:1000px;margin-top:100px;padding:100px;">
                 <th style="width:300px;">
                   Application Code:
                 </th>
@@ -190,7 +191,6 @@
                     {{$job_application[0]->qualified ? ucwords($job_application[0]->qualified) : "N/A"}}
                 </td>
             </tr>
-
             <tr style="margin-top:100px;padding:100px;">
                 <th>
                 Referees:
@@ -206,13 +206,13 @@
                 </th>
                 <td>
                     @if ($job_application[0]->status == 1)
-                        {{__("Approved")}};
+                        {{__("Approved")}}
                     @else if($job_application[0]->status == 0)
-                        {{__("Rejected")}};
+                        {{__("Rejected")}}
                     @endif
 
                     @if ($job_application[0]->status != 1 && $job_application[0]->status != 0)
-                        {{__("Pending")}};
+                        {{__("Pending")}}
                     @endif
                 </td>
             </tr>
