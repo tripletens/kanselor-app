@@ -136,7 +136,7 @@
                             <p class="text-center">It's a practical hands-on session that equip both the job seeker and business owners with business improvement skills</p>
 
                             <div class="blue-button" style="margin-bottom:10px;display:flex; flex-direction:row; align:center;justify-content:center;">
-                                <a href="{{route('trainings')}}">Get Started</a>
+                                <a href="{{route('training-page')}}">Get Started</a>
                             </div>
                             <br />
                         </div>
