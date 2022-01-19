@@ -91,6 +91,7 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
         Route::get('/view/{code}','JobController@fetch_one_job_application')->name('one_job_application');
         Route::post('/approve/{id}','JobController@approve')->name('approve_job_applications');
         Route::post('/reject/{id}','JobController@reject')->name('reject_job_applications');
+        Route::post('/assign-interview','JobController@assign_interview')->name('assign_interview');
     });
 
     Route::prefix('/category')->middleware('guard.verified:admin,admin.verification.notice')->group(function () {
@@ -116,6 +117,8 @@ Route::prefix('/admin')->name('admin.')->namespace('App\Http\Controllers\Admin')
         Route::get('/view/{id}','JobController@fetch_job_applicants_by_id')->name('one_job_applicant');
         Route::post('/activate','JobController@activate_user')->name('activate_user');
         Route::post('/deactivate','JobController@deactivate_user')->name('deactivate_user');
+        Route::get('/generate-pdf/{code}','JobController@generate_pdf_application')->name('generate_pdf_application');
+
     });
 
     Route::prefix('/employers')->middleware('guard.verified:admin,admin.verification.notice')->group(function () {

@@ -186,7 +186,7 @@ class JobsController extends Controller
             }
  
             $path = $file->storeAs(
-                'storage/public/videos', $file_name
+                'videos', $file_name
             );
 
             if($path){
@@ -196,15 +196,15 @@ class JobsController extends Controller
                     'user_id' => $user_id, 
                     'application_code' => $application_code,
                     'video' => $file_name,
-                    'question_id'=>''
+                    'question_id'=> ''
                 ]);
             }else{
                 toastr()->error("Sorry! Test Questions could not be submitted. Try again later ");
                 return back();
             }
-
-            toastr()->success("Test Answers successfully Uploaded");
-            return redirect()->route('view-one-application',$application_code);
         }
+
+        toastr()->success("Test Answers successfully Uploaded");
+        return redirect()->route('view-one-application',$application_code);
     }
 }

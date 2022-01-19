@@ -12,6 +12,17 @@ use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\JobApplicationRejected;
 use App\Mail\JobApplicationAccepted;
+use App\Models\AssignInterview;
+use App\Models\Employer;
+use App\Models\Interview;
+use App\Models\Vacancy;
+use PDF;
+
+use Illuminate\Support\Facades\Validator;
+
+
+// use Barryvdh\DomPDF\Facade as PDF;
+
 
 class JobController extends Controller
 {
@@ -31,7 +42,7 @@ class JobController extends Controller
 
     public function fetch_one_job_application($code){
         $job_application = DB::table('applications')->where("applications.code",$code)->join('categories', 'applications.id', '=', 'categories.id')
-        ->select('applications.*', 'categories.name as category_name')->get();;
+        ->select('applications.*', 'categories.name as category_name')->get();
         
         // echo dd($job_application);
         if(count($job_application) == 0){
@@ -46,10 +57,20 @@ class JobController extends Controller
             $questions = Question::where('category_id',$category_id)->where('status','1')->get();
         };
 
+        $employers = Employer::all();
+
+        $vacancies = DB::table('vacancies')->join('employers','vacancies.employer_id','=','employers.id')
+                    ->select('vacancies.*','employers.id as employer_id','employers.name as employer_name','employers.email as employer_email')->get();
+        
+        $interviews = Interview::where('application_code',$code)->where('status','1')->get();
+
         $data = [
             'job_application' => $job_application,
             'questions' => $questions,
-            'answers' => $answers
+            'answers' => $answers,
+            'employers' => $employers,
+            'vacancies' => $vacancies,
+            'interviews' => $interviews ? $interviews : []
         ];
 
         return view('admin.jobs.view-one')->with($data);
@@ -156,6 +177,9 @@ class JobController extends Controller
     }
 
     public function fetch_job_applicants_by_id($id){
+
+       
+    
         $check_job_applicant = User::find($id);
 
         if(!$check_job_applicant){
@@ -213,5 +237,76 @@ class JobController extends Controller
 
         toastr()->success('Job applicant activated successfully');
         return back();
+    }
+
+    public function generate_pdf_application($code){
+        $job_application = DB::table('applications')->where("applications.code",$code)->join('categories', 'applications.id', '=', 'categories.id')
+        ->select('applications.*', 'categories.name as category_name')->get();
+
+        if(count($job_application) == 0){
+            toastr()->error("Invalid Job Application Code Provided");
+            return redirect()->route('admin.job_applications');
+        }
+
+        // dd($job_application);
+
+        // $pdf = App::make('dompdf.wrapper');
+        // $pdf->loadHTML('<h1>Test</h1>');
+        // return $pdf->stream();
+
+        $pdf = PDF::loadView('admin.pdf.job_application',compact('job_application'));
+        return $pdf->download( 'Kiyix-' . $code . '.pdf');
+    }
+
+    public function assign_interview(Request $request){
+        // 'user_id', 'application_code', 'interview_code', 'interview_id', 'employer_id',
+        $validator = Validator::make($request->all(), [
+            "user_id" => 'required',
+            "application_code" => 'required',
+            "interview_id" => 'required',
+            'vacancy_id' => 'required'
+        ]);
+    
+        if ($validator->fails()) {
+            toastr()->error('All Fields are Required');
+            return back()->withErrors($validator)->withInput();
+        }
+
+        $user_id = $request->input('user_id');
+
+        $application_code = $request->input('application_code');
+
+        $interview_id = $request->input('interview_id');
+
+        $vacancy_id = $request->input('vacancy_id');
+
+        $fetch_vacancy_details = Vacancy::find($vacancy_id);
+
+        // print_r($vacancy_id); exit();
+
+        $employer_id = $fetch_vacancy_details['employer_id'];
+
+        $check_assigned_interview = AssignInterview::where('user_id',$user_id)->where('vacancy_id',$vacancy_id)->where('interview_id',$interview_id)->get();
+
+        if(count($check_assigned_interview) > 0 ){
+            toastr()->error('Sorry Job Applicant has already been assigned this interview');
+            return back();
+        }else{
+            $save_assigned_interview = AssignInterview::create([
+                'user_id' => $user_id, 
+                'application_code' => $application_code,
+                'interview_id' => $interview_id, 
+                'vacancy_id' => $vacancy_id, 
+                'employer_id' => $employer_id,  
+            ]);
+            
+            if (!$save_assigned_interview) {
+                toastr()->error('Sorry we could not assign the Vacancy & interview to the Job seeker');
+                return back();
+            }
+    
+            toastr()->success('Interview for Vacancy Assigned to the Job Seeker Successfully');
+            return back();
+        }
     }
 }

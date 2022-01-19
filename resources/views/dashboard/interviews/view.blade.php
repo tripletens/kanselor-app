@@ -14,58 +14,52 @@
     <div class="row">
             @if(count($interviews) > 0)
                 @foreach($interviews as $interview)
-                <div class="col-md-4 col-xs-12 col-lg-4">
+                <div class="col-md-6 col-xs-12 col-lg-6">
                     <div class="card">
                         <div class="card-body">
                             <!-- `title`, `application_code`, `type`, `link`, `address`, `time`, `date`, `status`, -->
-                            <div class="row">
-                                <div class="col-6">
-                                    <h4> {{$interview->title}}</h4>
-                                </div>
-                                <div class="col-6">
-                                    <span class="alert alert-danger">{{$interview->application_code}}</span>
-                                </div>
-                            <div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <h4> @if($interview->type == "virtual") {{$interview->type}} @else 'In-Person' @endif</h4>
-                                </div>
-                                <div class="col-6">
-                                    @if($interview->type == "virtual")
-                                        <a href="{{$interview->link}}">Open meeting link here {{$interview->link}}</a>
-                                    @else
-                                        <div class="alert alert-info">{{$interview->address}}</div>
-                                    @endif
-                                </div>
-                            <div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <h4> Time: </h4>
-                                </div>
-                                <div class="col-6">
-                                    <span class="alert alert-danger">{{$interview->time}}</span>
-                                </div>
-                            <div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <h4> Date: </h4>
-                                </div>
-                                <div class="col-6">
-                                    <span class="alert alert-danger">{{niceday($interview->date)}}</span>
-                                </div>
-                            <div>
-                            <div class="row">
-                                <div class="col-6">
-                                    <h4> Status: </h4>
-                                </div>
-                                <div class="col-6">
-                                    @if($interview->status == '1')
-                                        <span class="alert alert-success">Active</span>
-                                    @else
-                                        <span class="alert alert-danger">Expired</span>
-                                    @endif
-                                </div>
-                            <div>
+                            <table class="table table-striped p-5">
+                                <tr class="p-5">
+                                    <th><p> Title </p></th>
+                                    <td><p>{{$interview->title}}</p></td>
+                                </tr>
+                                <tr class="p-5">
+                                    <th><p>Application Code</p></th>
+                                    <td><p class="alert alert-danger">{{ucwords($interview->application_code)}}</p></td>
+                                </tr>
+                                <tr class="p-5">
+                                    <th><p> Interview Type </p></th>
+                                    <td><p> @if($interview->type == "virtual") {{ucword($interview->type}} @else 'In-Person' @endif</p></td>
+                                </tr>
+                                <tr class="p-5">
+                                    <th><p>Meeting Details</p></th>
+                                    <td>
+                                        @if($interview->type == "virtual")
+                                            <a href="{{$interview->link}}">Open meeting link here {{$interview->link}}</a>
+                                        @else
+                                            <div class="alert alert-info">{{ucwords($interview->address)}}</div>
+                                        @endif
+                                    </td>
+                                </tr>
+                                <tr class="p-5">
+                                    <th><p>Time: </p></th>
+                                    <td><p class="alert alert-danger">{{$interview->time}}</p></td>
+                                </tr>
+                                <tr class="p-5">
+                                    <th><p>Date: </p></th>
+                                    <td><p class="alert alert-danger">{{niceday($interview->date)}}</p></td>
+                                </tr>
+                                <tr class="p-5">
+                                    <th><p>Status: </p></th>
+                                    <td> 
+                                        @if($interview->status == '1')
+                                            <div class="alert alert-success">Active</div>
+                                        @else
+                                            <div class="alert alert-danger">Expired</div>
+                                        @endif
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>

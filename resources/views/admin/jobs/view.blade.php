@@ -13,9 +13,9 @@
     <div class="row">
         <div class="col-md-12 col-xs-12 col-lg-12">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body d-flex justify-content-center">
                     @if(count($applications) > 0)
-                    <table id="view_jobs_application" class="table table-responsive table-striped">
+                    <table id="view_jobs_application"  class="table table-responsive table-striped">
                         <thead>
                             <tr>
                                 <th>No</th>

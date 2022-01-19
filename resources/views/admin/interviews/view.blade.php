@@ -13,6 +13,7 @@
 
     <div class="row">
         <!-- <div class="col-md-12 col-xs-12 col-lg-12"> -->
+        <div class="d-flex justify-content-center">{{ $interviews->links() }}</div>
             @if(count($interviews) > 0)
                 @foreach($interviews as $interview)
                 <div class="col-md-6 col-xs-12 col-lg-6 "> 
