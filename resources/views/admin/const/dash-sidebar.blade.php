@@ -195,6 +195,13 @@
     </div>
 </li>
 
+<li class="nav-item d-flex justify-content-center">
+    <a class=" btn btn-block btn-danger text-white " href="#" data-toggle="modal" data-target="#logoutModal">
+        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-white"></i>
+            Logout
+    </a>
+</li>
+
 
 <!-- Divider -->
 <hr class="sidebar-divider d-none d-md-block">

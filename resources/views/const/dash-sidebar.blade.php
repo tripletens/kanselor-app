@@ -4,7 +4,7 @@
 <!-- Sidebar - Brand -->
 
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('landing-page')}}">
-    <img src="{{asset('images/kiyix_logo_white.png')}}" style="height:100px;width:auto;padding:20px;" alt="Kaneslor Logo">
+    <img src="{{asset('images/kiyix_logo_white.png')}}" style="height:100px;width:auto;padding:20px;" alt="KIYIX Logo">
 </a>
 
 <!-- Divider -->
@@ -74,6 +74,12 @@
             <a class="collapse-item" href="{{route('view-profile')}}">View Profile</a>
         </div>
     </div>
+</li>
+<li class="nav-item d-flex justify-content-center">
+    <a class=" btn btn-block btn-danger text-white " href="#" data-toggle="modal" data-target="#logoutModal">
+        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-white"></i>
+            Logout
+    </a>
 </li>
 <!-- Nav Item - Utilities Collapse Menu -->
 <!-- <li class="nav-item">
