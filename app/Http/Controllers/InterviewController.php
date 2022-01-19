@@ -22,7 +22,8 @@ class InterviewController extends Controller
 
         // `user_id`, `application_code`, `interview_code`, `interview_id`, `vacancy_id`, `employer_id`, 
 
-        $all_interviews = DB::table('assign_interviews')->join('interviews','interviews.id','=','assign_interviews.interview_id')
+        $all_interviews = DB::table('assign_interviews')
+        ->join('interviews','interviews.application_code','=','assign_interviews.application_code')
         ->select('interviews.*')->get();
 
         $data = [ 
