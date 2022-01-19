@@ -205,7 +205,15 @@
                 Status:
                 </th>
                 <td>
-                    {{$job_application[0]->status == 1 ? "Approved" : $job_application[0]->status == 0 ? "Rejected" : "Pending"}}
+                    @if ($job_application[0]->status == 1)
+                        {{__("Approved")}};
+                    @else if($job_application[0]->status == 0)
+                        {{__("Rejected")}};
+                    @endif
+
+                    @if ($job_application[0]->status != 1 && $job_application[0]->status != 0)
+                        {{__("Pending")}};
+                    @endif
                 </td>
             </tr>
             </tbody>
