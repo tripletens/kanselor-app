@@ -23,7 +23,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                             Job Applications (Pending)</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$dashboard['pending_applications']}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -41,7 +41,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                            Job Applications (Accepted)</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">10</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$dashboard['accepted_applications']}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-book fa-2x text-gray-300"></i>
@@ -57,11 +57,11 @@
             <div class="card-body">
                 <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                        <div class="text-xs font-weight-bold text-danger text-uppercase mb-1"> Job Applcations (Denied)
+                        <div class="text-xs font-weight-bold text-danger text-uppercase mb-1"> Job Applcations (Rejected)
                         </div>
                         <div class="row no-gutters align-items-center">
                             <div class="col-auto">
-                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0</div>
+                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$dashboard['rejected_applications']}}</div>
                             </div>
                             <div class="col">
                                 <div class="progress progress-sm mr-2">
@@ -88,7 +88,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                             Interviews</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">0</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$dashboard['all_interviews']}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-comments fa-2x text-gray-300"></i>
@@ -110,7 +110,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                             Categories </div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">20</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$dashboard['all_categories']}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -128,7 +128,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-secondary text-uppercase mb-1">
                            Application Questions</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">10</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$dashboard['all_questions']}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-book fa-2x text-gray-300"></i>
@@ -148,7 +148,7 @@
                         </div>
                         <div class="row no-gutters align-items-center">
                             <div class="col-auto">
-                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">0</div>
+                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">{{$dashboard['all_users']}}</div>
                             </div>
                             <div class="col">
                                 <div class="progress progress-sm mr-2">
@@ -175,7 +175,7 @@
                     <div class="col mr-2">
                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                             Employers</div>
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">40</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{$dashboard['all_employers']}}</div>
                     </div>
                     <div class="col-auto">
                         <i class="fas fa-comments fa-2x text-gray-300"></i>

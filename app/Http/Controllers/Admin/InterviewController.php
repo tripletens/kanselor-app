@@ -85,20 +85,10 @@ class InterviewController extends Controller
             return back();
         }
 
-        $status = $interview->status;
-
-        // dd($status);
-
-        if($status == '0'){
-            toastr()->info('Sorry! Interview has already been deleted');
-            return back();
-        }
-
-        // $delete_interview = $interview->save();
-        $delete_interview = $interview->update(['status' => 0]);
+        $delete_interview = $interview->delete();
 
         if(!$delete_interview){
-            toastr()->info('Sorry! Interview could not be deleted. Try again later');
+            toastr()->info('Sorry! Interview could not be deleted or doesnt exist. Try again later');
             return back();
         }
 

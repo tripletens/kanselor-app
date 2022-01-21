@@ -25,7 +25,7 @@
                                 </tr>
                                 <tr class="p-5">
                                     <th><p>Application Code</p></th>
-                                    <td><p class="alert alert-danger">{{ucwords($interview->application_code)}}</p></td>
+                                    <td><p class="badge badge-danger">{{ucwords($interview->application_code)}}</p></td>
                                 </tr>
                                 <tr class="p-5">
                                     <th><p> Interview Type </p></th>
@@ -43,19 +43,19 @@
                                 </tr>
                                 <tr class="p-5">
                                     <th><p>Time: </p></th>
-                                    <td><p class="alert alert-danger">{{$interview->time}}</p></td>
+                                    <td><p class="alert alert-info">{{$interview->time}}</p></td>
                                 </tr>
                                 <tr class="p-5">
                                     <th><p>Date: </p></th>
-                                    <td><p class="alert alert-danger">{{niceday($interview->date)}}</p></td>
+                                    <td><p class="alert alert-info">{{niceday($interview->date)}}</p></td>
                                 </tr>
                                 <tr class="p-5">
                                     <th><p>Status: </p></th>
                                     <td> 
                                         @if($interview->status == '1')
-                                            <div class="alert alert-success">Active</div>
+                                            <div class="badge badge-success">Active</div>
                                         @else
-                                            <div class="alert alert-danger">Expired</div>
+                                            <div class="badge badge-danger">Expired</div>
                                         @endif
                                     </td>
                                 </tr>

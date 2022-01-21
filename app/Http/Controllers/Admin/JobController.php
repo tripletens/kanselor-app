@@ -64,6 +64,8 @@ class JobController extends Controller
         
         $interviews = Interview::where('application_code',$code)->where('status','1')->get();
 
+        // dd($interviews);
+
         $data = [
             'job_application' => $job_application,
             'questions' => $questions,
@@ -72,6 +74,8 @@ class JobController extends Controller
             'vacancies' => $vacancies,
             'interviews' => $interviews ? $interviews : []
         ];
+
+        // dd($data);
 
         return view('admin.jobs.view-one')->with($data);
     }
@@ -268,6 +272,8 @@ class JobController extends Controller
             toastr()->error('All Fields are Required');
             return back()->withErrors($validator)->withInput();
         }
+
+        // dd($request->all());
 
         $user_id = $request->input('user_id');
 
