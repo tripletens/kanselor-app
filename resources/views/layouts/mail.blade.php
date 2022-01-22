@@ -20,7 +20,7 @@
 <body>
     <div class="container d-flex justify-content-center">
         <div class="mx-auto">
-            <img src="{{asset('images/logo.png')}}" style="height:100px;width:auto; display:flex; justify-content:center;" alt="Kaneslor Logo">
+            <img src="{{asset('images/Kiyix_logo.png')}}" style="height:100px;width:auto; display:flex; justify-content:center;" alt="Kaneslor Logo">
         </div>
     </div>
     @yield('content')
@@ -30,7 +30,7 @@
             <div class="footer-heading">
                 <h4>Contact Information</h4>
             </div>
-            <p><i class="fa fa-map-marker"></i> Lakeview Estate, Amuwo Odofin, Lagos, Nigeria</p>
+            <p><i class="fa fa-map-marker"></i>  Kanselor University Campus, Lakeview Estate, Phase two 101015, Lagos</p>
             <ul>
                 <li><span>Phone:</span><a href="tel:+2348023622171">+234 802 362 2171</a></li>
                 <li><span>Email:</span><a href="mailto:admin@kaneslor.com">admin@kaneslor.com</a></li>

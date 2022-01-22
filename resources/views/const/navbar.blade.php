@@ -18,7 +18,7 @@
                                     <ul class="sub-menu">
                                         <li><a href="{{route('about-page')}}">About Us</a></li>
                                         <li><a href="{{route('team-page')}}">Team</a></li>
-                                        <!-- <li><a href="{{route('blog-page')}}">Blog</a></li> -->
+                                        <li><a href="{{route('blog-page')}}">Blog</a></li>
                                         <li><a href="{{route('testimonials-page')}}">Testimonials</a></li>
                                         <li><a href="{{route('terms-page')}}">Terms</a></li>
                                     </ul>

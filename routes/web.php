@@ -203,6 +203,14 @@ Route::prefix('/employer')->name('employer.')->namespace('App\Http\Controllers\E
         Route::post('/edit','VacancyController@edit_vacancy')->name('edit_vacancy');
         Route::post('/delete','VacancyController@delete_vacancy')->name('delete_vacancy');
     });
+
+    Route::prefix('profile')->group(function () {
+        Route::get('/view','ProfileController@fetch_user_details')->name('view-profile');
+        Route::post('/update','ProfileController@update_profile')->name('update-profile');
+        Route::post('/change-password','ProfileController@change_password')->name('change_password');
+    });
+
+
 });
 
 Route::get('/', [App\Http\Controllers\LandingController::class,'index'])->name('landing-page');
@@ -227,6 +235,7 @@ Route::get('/trainings/{slug}', [App\Http\Controllers\LandingController::class,'
 
 Route::post('/apply-training', [App\Http\Controllers\LandingController::class,'apply_training'])->name('apply-training');
 
+Route::post('/send-contact-mail', [App\Http\Controllers\LandingController::class,'send_contact_mail'])->name('send-contact-mail');
 
 
 
